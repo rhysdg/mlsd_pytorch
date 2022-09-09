@@ -67,7 +67,11 @@ def main(model_type='tiny',
    
     model_path = f'./models/mlsd_{model_type}_512_fp32.pth'
     
-    model = MobileV2_MLSD_Tiny().cuda().eval()
+    if model_type == 'tiny':
+        model = MobileV2_MLSD_Tiny().cuda().eval()
+    else:
+        model = MobileV2_MLSD_Large().cuda().eval()
+        
     model.load_state_dict(torch.load(model_path, map_location=device), strict=True)
 
 
