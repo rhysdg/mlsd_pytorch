@@ -112,7 +112,7 @@ For simple usage go ahead and dial in the following:
 python trt_converter.py --model tiny --conversion fp16 --bench
 ```
 All model locations default to `./models/mlsd_{model_type}__512_trt_{conversion}.pth`.
-The tool also supports int8 conversion provided that a representative subset of images is is provided as follows:
+The tool also supports int8 conversion provided that a representative subset of images is provided as follows:
 
 ```
 python trt_converter.py --model tiny --conversion int8 --calibration_data calib-folder
